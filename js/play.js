@@ -82,11 +82,8 @@ function hideCard()
         resetSelected();
     }, 1500);
 
-    if(index == 0)
-    {
-        console.log('??');
-        endGame();
-    }
+    if(index == 2)
+        setTimeout(endGame, 1000);
 }
 
 //카드 다시 뒤집기
