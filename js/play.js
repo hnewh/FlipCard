@@ -5,9 +5,6 @@ $(document).ready(function(){
     //드래그 금지
     $(document).bind('selectstart', function() {return false;});
 
-    if(selectedCard.length == 2)
-        $(this).attr('onclick', '').unbind('click');
-
     var index = 0;
     var numArr = [];
     var cardNum = $('.card-front');
@@ -35,7 +32,11 @@ $(document).ready(function(){
     }
 
     //카드 클릭시
-    $('.card').on("click", function(){
+    $('.card').on("click", function(event){
+
+        if(selectedCard.length > 1)
+            event.prevetDefault();
+
         //중복금지
         $(this).css('pointer-events', 'none');
 
@@ -51,6 +52,9 @@ $(document).ready(function(){
             selectedCard[0] = $(this);
         else
             selectedCard[1] = $(this);
+
+        if(selectedCard.length == 2)
+            $(this).css('point-events', 'none');
 
         //선택번호 삽입
         if(!selectedNum)
@@ -92,7 +96,7 @@ function returnCard()
 //카드 숫자 보여주기
 function showCardNum(back, card)
 {
-    card.css('transform', 'rotateY(360deg)');
+    card.css('transform', 'rotateY(0deg)');
     card.css('transition', 'transform 0.2s');
     back.children().show();
 }
