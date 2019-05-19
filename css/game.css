@@ -1,0 +1,31 @@
+.card {
+    width: 170px;
+    height: 170px;
+    margin: 1%;
+    position: relative;
+    display: inline-block;
+
+    background-image: url('../src/card.jpg');
+    background-position: center;
+    cursor: pointer;
+}
+
+header {
+    margin: 2%;
+}
+
+.card-front, .card-back {
+    position: absolute;
+}
+
+.card-front {
+    visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.card-back img {
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    z-index: -1;
+}

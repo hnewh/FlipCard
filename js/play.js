@@ -1,3 +1,4 @@
+var index = 0;
 var selectedCard = []; //선택카드
 var selectedNum; //선택번호
 
@@ -5,7 +6,6 @@ $(document).ready(function(){
     //드래그 금지
     $(document).bind('selectstart', function() {return false;});
 
-    var index = 0;
     var numArr = [];
     var cardNum = $('.card-front');
     var cardImage = $('.card-back');
@@ -33,9 +33,9 @@ $(document).ready(function(){
 
     //카드 클릭시
     $('.card').on("click", function(event){
-
+        //2개 이상 선택 금지
         if(selectedCard.length > 1)
-            event.prevetDefault();
+            throw new Error("두 개 이상 선택함");
 
         //중복금지
         $(this).css('pointer-events', 'none');
@@ -75,9 +75,18 @@ function hideCard()
 {
     setTimeout(function(){
         for(var i = 0; i < 2; i++)
+        {    
             selectedCard[i].css('visibility', 'hidden');
+            index--;
+        }
         resetSelected();
     }, 1500);
+
+    if(index == 0)
+    {
+        console.log('??');
+        endGame();
+    }
 }
 
 //카드 다시 뒤집기
@@ -108,3 +117,13 @@ function resetSelected()
     selectedCard = arr;
     selectedNum = 0;
 }
+
+//게임이 끝났을때
+function endGame()
+{
+    var answer = confirm('메뉴로 돌아갈까요? (취소 시 다시 게임 시작)');
+    if(answer == true)
+        window.location = './index.html';
+    else
+        window.location = './game.html';
+}  

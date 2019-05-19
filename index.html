@@ -7,115 +7,29 @@
     <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16x16.png">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="js/play.js"></script>
+    <script src="js/script.js"></script>
     <title>역사를 뒤집어라</title>
 </head>
 <body>
-    <!-- <h1>역사를 뒤집어라</h1>
-    <div class="btn show">
-        <button>시작</button>
-        <button>설명</button>
-    </div>
-    <div class="btn hide">
-        <h2>시대 선택하기</h2>
-        <button>선사시대와 고조선</button>
-    </div> -->
-
-    <div class="card" id="c1">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c2">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c3">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c4">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div><br>
-    <div class="card" id="c5">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div> 
-    <div class="card" id="c6">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c7">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c8">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div> <br>
-    <div class="card" id="c9">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c10">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c11">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c12">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div> <br>
-    <div class="card" id="c13">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c14">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c15">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
-    </div>
-    <div class="card" id="c16">
-        <div class="card-inner">
-            <div class="card-front"></div>
-            <div class="card-back"></div>
-        </div>
+    <div class="wrap">
+        <header>역사를 뒤집어라</header>
+        <section>
+            <button id="range">차례</button>
+            <div class="range invisible">
+                <button class="ed">선사문화와 여러 나라</button>
+                <button class="ing">삼국과 가야</button>
+                <button class="ing">통일신라와 발해</button>
+                <button class="ing">고려와 조선</button>
+                <button class="ing">조선 후기와 일제강점기</button>
+                <button class="back">뒤로 가기</button>
+            </div>
+            <button id="help">도움말</button>
+            <div class="help invisible">
+                주제가 같은 카드 두 개를 선택시 카드가 없어집니다.
+                모든 카드를 제거하면 승리! <br>
+                <button class="back">뒤로 가기</button>
+            </div>
+        </section>
     </div>
 </body>
 </html>
