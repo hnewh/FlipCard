@@ -1,8 +1,11 @@
 var index = 0;
+var startTime; //시작시간
 var selectedCard = []; //선택카드
 var selectedNum; //선택번호
 
 $(document).ready(function(){
+    startTime = new Date().getTime();
+
     //드래그 금지
     $(document).bind('selectstart', function() {return false;});
 
@@ -25,7 +28,7 @@ $(document).ready(function(){
         //숫자 추가
         cardNum[index].innerHTML = numArr[index];
         //이미지 추가
-        var image = "<img src='src/card" + numArr[index] + ".jpg'>";
+        var image = "<img src='src/" + "range" + $('.invisible').text() +"/card" + numArr[index] + ".jpg'>";
         cardImage[index].innerHTML = image;
 
         index++;
@@ -118,9 +121,12 @@ function resetSelected()
 //게임이 끝났을때
 function endGame()
 {
-    var answer = confirm('메뉴로 돌아갈까요? (취소 시 다시 게임 시작)');
+    //소요시간
+    var endTime = new Date().getTime() - startTime;
+    var answer = confirm(endTime/1000 + '초가 걸렸습니다\n 메뉴로 돌아갈까요? (취소 시 다시 게임 시작)');
+
     if(answer == true)
         window.location = './index.html';
     else
-        window.location = './game.html';
+        window.location = document.URL;
 }  

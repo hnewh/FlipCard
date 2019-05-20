@@ -17,12 +17,16 @@ $(document).ready(function(){
         $('section button').show();
     });
 
-    $('.ed').on("click", function(){
-        window.location = 'game.html';
+    //게임 화면으로 이동
+    $('.r1').on("click", function(){
+        window.location = 'game1.html';
+    });
+    $('.r2').on("click", function(){
+        window.location = 'game2.html';
     });
 
     //개발중
     $('.ing').on("click", function(){
-        alert("개발 중입니다!");
+        alert("더 많은 공부 후에 추가하겠습니다 ╰(*´︶`*)╯♡");
     });
 });
